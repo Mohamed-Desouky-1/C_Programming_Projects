@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
+#include <string.h>
 
 char randomChoice(const char *choices);
 int main()
@@ -70,15 +71,12 @@ int main()
 } 
 char randomChoice(const char *choices)
 {
-	size_t length = 0;
-    while (choices[length] != '\0') {
-        length++;
-    }
+    size_t length = strlen(choices);
 
     if (length == 0) {
-        return '\0'; 
+        return '\0';
     }
 
-    int randomIndex = rand() % length; 
-    return choices[randomIndex];  
+    int randomIndex = rand() % length;
+    return choices[randomIndex];
 }
